@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Threading;
 
 public class UI_PesanLevel : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class UI_PesanLevel : MonoBehaviour
         if (gameObject.activeSelf)
         {
             gameObject.SetActive(false);
+            
         }
     }
 

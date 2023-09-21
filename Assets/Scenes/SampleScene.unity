@@ -3159,7 +3159,7 @@ MonoBehaviour:
   _soalSoal:
   - hint: {fileID: 21300000, guid: e51c6b6756f780849959d88b2dfcfce1, type: 3}
     pertanyaan: Warna dari daun?
-    judul: Level 1
+    judul: 
     jawabanTeks:
     - Merah
     - Biru
@@ -3168,7 +3168,7 @@ MonoBehaviour:
     adalahBenar: 00000100
   - hint: {fileID: 21300000, guid: 93806a2eed2b2ab4ead4673539cfc424, type: 3}
     pertanyaan: Warna dari Matahari?
-    judul: Level 2
+    judul: 
     jawabanTeks:
     - Merah
     - Biru

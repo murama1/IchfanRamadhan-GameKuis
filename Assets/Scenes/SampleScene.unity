@@ -3156,34 +3156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3950cc628132164ea9959b9ede83f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soalSoal:
-  - hint: {fileID: 21300000, guid: e51c6b6756f780849959d88b2dfcfce1, type: 3}
-    pertanyaan: Warna dari daun?
-    judul: 
-    jawabanTeks:
-    - Merah
-    - Biru
-    - Hijau
-    - Kuning
-    adalahBenar: 00000100
-  - hint: {fileID: 21300000, guid: 93806a2eed2b2ab4ead4673539cfc424, type: 3}
-    pertanyaan: Warna dari Matahari?
-    judul: 
-    jawabanTeks:
-    - Merah
-    - Biru
-    - Hijau
-    - Kuning
-    adalahBenar: 00000001
-  - hint: {fileID: 21300000, guid: d7bbc01864f77c64ea5387ff18462e39, type: 3}
-    pertanyaan: Warna dari Laut?
-    judul: Level 3
-    jawabanTeks:
-    - Merah
-    - Biru
-    - Hijau
-    - Kuning
-    adalahBenar: 00010000
+  _playerProgress: {fileID: 11400000, guid: 17bc5cc80c23f6e43aaadb4825e13594, type: 2}
+  _soalSoal: {fileID: 11400000, guid: da3f03a6287ed0548ad03776f88e2da1, type: 2}
   _tempatPertanyaan: {fileID: 901197389}
   _tempatPilihanJawaban:
   - {fileID: 1060332927}

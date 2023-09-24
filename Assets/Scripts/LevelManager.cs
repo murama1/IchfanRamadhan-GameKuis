@@ -7,20 +7,13 @@ using TMPro;
 public class LevelManager : MonoBehaviour
 {
 
-    [System.Serializable]
-    private struct DataSoal
-    {
-        public Sprite hint;
-        public string pertanyaan;
-        public string judul;
-
-        public string[] jawabanTeks;
-        public bool[] adalahBenar;
-
-    }
 
     [SerializeField]
-    private DataSoal[] _soalSoal = new DataSoal[0];
+    private PlayerProgress _playerProgress = null;
+
+    
+    [SerializeField]
+    private LevelPackKuis _soalSoal = null;
 
 
     [SerializeField]
@@ -37,13 +30,13 @@ public class LevelManager : MonoBehaviour
         _indexSoal++;
 
         //jika index melampaui soal terakhir, ulang dari awal
-        if (_indexSoal >= _soalSoal.Length) 
+        if (_indexSoal >= _soalSoal.BanyakLevel) 
         { 
             _indexSoal = 0;
         }
 
         //ambil data Pertanyaan
-        DataSoal soal = _soalSoal[_indexSoal];
+        LevelSoalKuis soal = _soalSoal.AmbilLevelKe(_indexSoal);
 
         //set informasi soal
         _tempatPertanyaan.SetPertanyaan($"Soal {_indexSoal + 1}", soal.pertanyaan, soal.hint);
@@ -51,7 +44,8 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < _tempatPilihanJawaban.Length; i++) 
         {
             UI_PoinJawaban poin = _tempatPilihanJawaban[i];
-            poin.SetJawaban(soal.jawabanTeks[i], soal.adalahBenar[i]);
+            LevelSoalKuis.OpsiJawaban opsi = soal.opsiJawaban[i];
+            poin.SetJawaban(opsi.jawabanTeks, opsi.adalahBenar);
             
         }
 
@@ -62,8 +56,14 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        
+        if (!_playerProgress.MuatProgress()) 
+        { 
+            _playerProgress.SimpanProgress();
+        }
+
         NextLevel();
-        //Debug.Log($"soal ke : {_indexSoal}");
+
     }
 
     public int GetLevel 
@@ -71,6 +71,6 @@ public class LevelManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        DataSoal soal = _soalSoal[_indexSoal];
+        LevelSoalKuis soal = _soalSoal.AmbilLevelKe(_indexSoal);
     }
 }

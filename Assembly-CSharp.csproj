@@ -60,7 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI_PoinJawaban.cs" />
+    <Compile Include="Assets\Scripts\UI_OpsiLevelPack.cs" />
+    <Compile Include="Assets\Scripts\UI_LevelPackList.cs" />
+    <Compile Include="Assets\Scripts\UI_OpsiLevelKuis.cs" />
     <Compile Include="Assets\Scripts\LevelSoalKuis.cs" />
+    <Compile Include="Assets\Scripts\UI_LevelKuisList.cs" />
+    <Compile Include="Assets\Scripts\GameSceneManager.cs" />
+    <Compile Include="Assets\Scripts\InisialDataGameplay.cs" />
     <Compile Include="Assets\Scripts\LevelPackKuis.cs" />
     <Compile Include="Assets\Scripts\UI_Timer.cs" />
     <Compile Include="Assets\Scripts\UI_Pertanyaan.cs" />

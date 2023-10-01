@@ -24,6 +24,13 @@ public class LevelManager : MonoBehaviour
 
     private int _indexSoal = -1;
 
+    //untuk scene
+    [SerializeField]
+    private GameSceneManager _gameSceneManager = null;
+
+    [SerializeField]
+    private string _namaSceneManager = null;
+
     public void NextLevel()
     {
         //soal index selanjutnya
@@ -31,8 +38,13 @@ public class LevelManager : MonoBehaviour
 
         //jika index melampaui soal terakhir, ulang dari awal
         if (_indexSoal >= _soalSoal.BanyakLevel) 
-        { 
-            _indexSoal = 0;
+        {
+            //gunakan apabila setelah level habis kembali ke soal pertama
+            //_indexSoal = 0;
+
+            //gunakan apabila setelah level habis kembali ke scene pilihan
+            _gameSceneManager.BukaScene(_namaSceneManager);
+            return;
         }
 
         //ambil data Pertanyaan
@@ -56,11 +68,11 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        
-        if (!_playerProgress.MuatProgress()) 
-        { 
-            _playerProgress.SimpanProgress();
-        }
+
+        //if (!_playerProgress.MuatProgress())
+        //{
+        //    _playerProgress.SimpanProgress();
+        //}
 
         NextLevel();
 

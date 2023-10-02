@@ -6,8 +6,11 @@ using UnityEngine.UI;
 
 public class UI_Timer : MonoBehaviour
 {
-    [SerializeField]
-    private UI_PesanLevel _tempatPesan = null;
+
+    public static event System.Action EventWaktuHabis;
+
+    //[SerializeField]
+    //private UI_PesanLevel _tempatPesan = null;
     
     [SerializeField]
     private Slider _timeBar = null; //container slider time
@@ -53,8 +56,11 @@ public class UI_Timer : MonoBehaviour
         {
             //Debug.Log("Waktu Habis");
             //UI Mengganti message waktu habis
-            _tempatPesan.Pesan = ("Waktu Habis");
-            _tempatPesan.gameObject.SetActive(true);
+            
+            //_tempatPesan.Pesan = ("Waktu Habis");
+            //_tempatPesan.gameObject.SetActive(true);
+
+            EventWaktuHabis?.Invoke();
 
             //logic waktu berjalan
             waktuBerjalan = false;

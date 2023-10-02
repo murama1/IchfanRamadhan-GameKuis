@@ -73,9 +73,25 @@ public class LevelManager : MonoBehaviour
         //{
         //    _playerProgress.SimpanProgress();
         //}
-
+        GetInitialDataGameplay();
         NextLevel();
 
+        //subscribe event
+        UI_PoinJawaban.EventJawabSoal += UI_PoinJawaban_EventJawabSoal;
+
+    }
+
+    private void UI_PoinJawaban_EventJawabSoal(string jawaban, bool adalahBenar)
+    {
+        if (adalahBenar)
+        {
+            _playerProgress.progressData.koin += 20;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        UI_PoinJawaban.EventJawabSoal -= UI_PoinJawaban_EventJawabSoal;
     }
 
     public int GetLevel 
@@ -85,4 +101,20 @@ public class LevelManager : MonoBehaviour
     {
         LevelSoalKuis soal = _soalSoal.AmbilLevelKe(_indexSoal);
     }
+
+    private void GetInitialDataGameplay() {
+        if (InisialDataGameplay.Instance.levelPack != null)
+        {
+            _soalSoal = InisialDataGameplay.Instance.levelPack;
+            _indexSoal = InisialDataGameplay.Instance.indexSoal - 1;
+        }
+       
+    
+    }
+
+    private void OnApplicationQuit()
+    {
+        InisialDataGameplay.Instance.SaatKalah = false;
+    }
+
 }

@@ -20,9 +20,12 @@ public class UI_LevelKuisList : MonoBehaviour
     private string _gameplayScene = null;
 
 
+
     public void UnloadLevelPack(LevelPackKuis levelPack)
     {
+
         HapusIsiKonten();
+        
     
         for (int i=0; i < levelPack.BanyakLevel; i++) 
         {
@@ -43,13 +46,10 @@ public class UI_LevelKuisList : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //if (_levelPackKuis != null)
-        //{
-        //UnloadLevelPack(_levelPackKuis);
-        //}
 
+        UnloadLevelPack(InisialDataGameplay.Instance.levelPack);
         UI_OpsiLevelKuis.EventSaatKlik += UI_OpsiLevelKuis_EventSaatKlik;
-
+        
     }
 
     private void OnDestroy()
@@ -59,6 +59,12 @@ public class UI_LevelKuisList : MonoBehaviour
 
     private void UI_OpsiLevelKuis_EventSaatKlik(int index)
     {
+        //personal code, add reference ke inisialdatagameplay
+        _levelPackKuis = InisialDataGameplay.Instance.levelPack;
+        InisialDataGameplay.Instance.levelSoal = _levelPackKuis.AmbilLevelKe(index);
+        InisialDataGameplay.Instance.indexSoal = index;
+        //end of personal code
+
         _gameSceneManager.BukaScene(_gameplayScene);
     }
 

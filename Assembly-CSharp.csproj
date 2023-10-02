@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\UI_PesanLevel.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\PlayerProgress.cs" />
+    <Compile Include="Assets\Scripts\LevelMenuDataManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

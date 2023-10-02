@@ -40,21 +40,42 @@ public class UI_LevelPackList : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
         LoadLevelPack();
+
+        //UI_OpsiLevelPack_EventSaatKlik(InisialDataGameplay.Instance.levelPack);
+
+        //if (InisialDataGameplay.Instance.SaatKalah)
+        //{
+        //    UI_OpsiLevelPack_EventSaatKlik(InisialDataGameplay.Instance.levelPack);
+
+        //}
+
+        //subscribe event
         UI_OpsiLevelPack.EventSaatKlik += UI_OpsiLevelPack_EventSaatKlik;
+
+
+
     }
 
     private void UI_OpsiLevelPack_EventSaatKlik(LevelPackKuis levelPack)
     {
+        
         //buka menu level
-        _levelList.gameObject.SetActive(true);
         _levelList.UnloadLevelPack(levelPack);
+        _levelList.gameObject.SetActive(true);
+
+        //test init gameplay data
+        InisialDataGameplay.Instance.levelPack = levelPack;
+
+
 
         //tutup menu level packs
         gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
+    
     private void OnDestroy()
     {
         //unsubscribe event

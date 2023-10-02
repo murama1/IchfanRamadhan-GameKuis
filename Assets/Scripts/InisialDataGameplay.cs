@@ -2,21 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InisialDataGameplay : ScriptableObject
+public class InisialDataGameplay : MonoBehaviour
 {
+
+    public static InisialDataGameplay Instance;
 
     public LevelPackKuis levelPack = null;
     public LevelSoalKuis levelSoal = null;
-    
-    // Start is called before the first frame update
-    void Start()
+    public int indexSoal = 0;
+
+    [SerializeField]
+    private bool _saatKalah = false;
+
+    private void Awake()
     {
-        
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool SaatKalah 
     {
-        
+        get { return _saatKalah; }
+        set { _saatKalah = value;}
+    
     }
+
 }

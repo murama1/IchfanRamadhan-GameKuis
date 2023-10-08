@@ -83,9 +83,16 @@ public class LevelManager : MonoBehaviour
 
     private void UI_PoinJawaban_EventJawabSoal(string jawaban, bool adalahBenar)
     {
-        if (adalahBenar)
+        if (!adalahBenar) { return; }
+        //beda dengan tutorial, tidak pakai initial game data
+        var namaLevelPack = _soalSoal.name;
+        int levelTerakhir = _playerProgress.progressData.progressLevel[namaLevelPack];
+        
+        if (_indexSoal + 2 > levelTerakhir)
         {
             _playerProgress.progressData.koin += 20;
+            _playerProgress.progressData.progressLevel[namaLevelPack] = _indexSoal + 2;
+            _playerProgress.SimpanProgress();
         }
     }
 

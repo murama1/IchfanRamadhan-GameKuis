@@ -18,6 +18,12 @@ public class UI_OpsiLevelKuis : MonoBehaviour
     private LevelSoalKuis _levelKuis = null;
 
 
+    public bool InteraksiTombol
+    { 
+        get => _tombolLevel.interactable;
+        set => _tombolLevel.interactable = value;      
+    }
+
     public void SetLevelKuis(LevelSoalKuis levelKuis, int index)
     {
         _levelName.text = levelKuis.name;

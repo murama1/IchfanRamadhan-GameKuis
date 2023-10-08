@@ -14,13 +14,13 @@ public class UI_LevelPackList : MonoBehaviour
     [SerializeField]
     private RectTransform _content = null;
 
-    [Space, SerializeField]
-    private LevelPackKuis[] _levelPacks = new LevelPackKuis[0];
+    //[Space, SerializeField]
+    //private LevelPackKuis[] _levelPacks = new LevelPackKuis[0];
     
     
-    private void LoadLevelPack()
+    public void LoadLevelPack(LevelPackKuis[] levelPackKuis, PlayerProgress.MainData playerData)
     {
-        foreach (var levelPack in _levelPacks)
+        foreach (var levelPack in levelPackKuis)
         { 
         //membuat salinan objek dari prefab tombol level pack
         var t = Instantiate(_tombolLevelPack);
@@ -31,6 +31,17 @@ public class UI_LevelPackList : MonoBehaviour
             t.transform.SetParent(_content);
             t.transform.localScale = Vector3.one;
 
+            //cek apakah level pack terdaftar di Dictionary progress pemain
+            if (!playerData.progressLevel.ContainsKey(levelPack.name))
+            {
+                Debug.Log($"{playerData.progressLevel.ContainsKey(levelPack.name)}");
+                //jika tidak terdaftar maka level pack terkunci
+                t.KunciLevelPack();
+            }
+            else if (playerData.progressLevel.ContainsKey(levelPack.name))
+            {
+                t.BukaLevelPack();
+            }
         
         }
     }
@@ -38,18 +49,16 @@ public class UI_LevelPackList : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
 
 
-        LoadLevelPack();
+        //LoadLevelPack();
 
-        //UI_OpsiLevelPack_EventSaatKlik(InisialDataGameplay.Instance.levelPack);
-
+        //cek fungsi ini buat apa
         //if (InisialDataGameplay.Instance.SaatKalah)
         //{
-        //    UI_OpsiLevelPack_EventSaatKlik(InisialDataGameplay.Instance.levelPack);
-
+        //    UI_OpsiLevelPack_EventSaatKlik(null, InisialDataGameplay.Instance.levelPack, false);
         //}
 
         //subscribe event
@@ -59,20 +68,28 @@ public class UI_LevelPackList : MonoBehaviour
 
     }
 
-    private void UI_OpsiLevelPack_EventSaatKlik(LevelPackKuis levelPack)
+    private void UI_OpsiLevelPack_EventSaatKlik(UI_OpsiLevelPack tombolLevelPack, LevelPackKuis levelPack, bool terkunci)
     {
+        //Cek apakah terkunci, apabila terkunci abaikan
+        if(terkunci) { return; }
+
+        Debug.Log("dijalankan");
         
+
         //buka menu level
         _levelList.UnloadLevelPack(levelPack);
         _levelList.gameObject.SetActive(true);
 
-        //test init gameplay data
+        //init gameplay data
         InisialDataGameplay.Instance.levelPack = levelPack;
+
 
 
 
         //tutup menu level packs
         gameObject.SetActive(false);
+
+
     }
 
     

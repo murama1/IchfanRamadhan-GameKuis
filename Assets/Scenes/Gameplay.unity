@@ -1131,7 +1131,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2101567709845628125}
         m_TargetAssemblyTypeName: UI_PoinJawaban, Assembly-CSharp
-        m_MethodName: pilihJawaban
+        m_MethodName: PilihJawaban
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1477,7 +1477,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7478311445342103500}
         m_TargetAssemblyTypeName: UI_PoinJawaban, Assembly-CSharp
-        m_MethodName: pilihJawaban
+        m_MethodName: PilihJawaban
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3135,7 +3135,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7130516893446960969}
         m_TargetAssemblyTypeName: UI_PoinJawaban, Assembly-CSharp
-        m_MethodName: pilihJawaban
+        m_MethodName: PilihJawaban
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3291,7 +3291,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6034392065449408936}
         m_TargetAssemblyTypeName: UI_PoinJawaban, Assembly-CSharp
-        m_MethodName: pilihJawaban
+        m_MethodName: PilihJawaban
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

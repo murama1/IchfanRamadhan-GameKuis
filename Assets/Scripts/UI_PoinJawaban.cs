@@ -24,7 +24,7 @@ public class UI_PoinJawaban : MonoBehaviour
         _adalahBenar = adalahBenar;
     }
 
-    public void pilihJawaban() 
+    public void PilihJawaban() 
     {
         //Debug.Log($"Jawaban anda adalah {_teksJawaban.text} ({_adalahBenar})");
         //_tempatPesan.Pesan = ($"Jawaban anda adalah {_teksJawaban.text} ({_adalahBenar})");

@@ -5,6 +5,9 @@ using UnityEngine;
 public class UI_LevelKuisList : MonoBehaviour
 {
     [SerializeField]
+    private PlayerProgress _playerProgress = null;
+    
+    [SerializeField]
     private UI_OpsiLevelKuis _tombolLevelKuis = null;
 
     [SerializeField]
@@ -25,8 +28,9 @@ public class UI_LevelKuisList : MonoBehaviour
     {
 
         HapusIsiKonten();
-        
-    
+
+        var levelTerbukaTerakhir = _playerProgress.progressData.progressLevel[levelPack.name] - 1;
+
         for (int i=0; i < levelPack.BanyakLevel; i++) 
         {
             //membuat salinan objek dari prefab tombol level pack
@@ -38,7 +42,10 @@ public class UI_LevelKuisList : MonoBehaviour
             t.transform.SetParent(_content);
             t.transform.localScale = Vector3.one;
 
-
+            if (i > levelTerbukaTerakhir)
+            {
+                t.InteraksiTombol = false;
+            }
         }
     }
 
@@ -47,9 +54,10 @@ public class UI_LevelKuisList : MonoBehaviour
     void Start()
     {
 
-        UnloadLevelPack(InisialDataGameplay.Instance.levelPack);
-        UI_OpsiLevelKuis.EventSaatKlik += UI_OpsiLevelKuis_EventSaatKlik;
         
+        //UnloadLevelPack(_playerProgress.progressData.progressLevel);
+        UI_OpsiLevelKuis.EventSaatKlik += UI_OpsiLevelKuis_EventSaatKlik;
+        UnloadLevelPack(InisialDataGameplay.Instance.levelPack);
     }
 
     private void OnDestroy()

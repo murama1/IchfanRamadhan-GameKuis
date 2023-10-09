@@ -14,6 +14,9 @@ public class UI_LevelPackList : MonoBehaviour
     [SerializeField]
     private RectTransform _content = null;
 
+    [SerializeField]
+    private Animator _animator = null;
+
     //[Space, SerializeField]
     //private LevelPackKuis[] _levelPacks = new LevelPackKuis[0];
     
@@ -87,8 +90,9 @@ public class UI_LevelPackList : MonoBehaviour
 
 
         //tutup menu level packs
-        gameObject.SetActive(false);
-
+        //gameObject.SetActive(false);
+        _animator.SetTrigger("KeLevel");
+        _animator.SetBool("KeLevelPack", false);
 
     }
 

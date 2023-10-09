@@ -73,6 +73,8 @@ public class LevelManager : MonoBehaviour
         //{
         //    _playerProgress.SimpanProgress();
         //}
+        //play BGM Index ke-1
+        AudioManager.instance.PlayBGM(1);
         GetInitialDataGameplay();
         NextLevel();
 
@@ -87,6 +89,8 @@ public class LevelManager : MonoBehaviour
         //beda dengan tutorial, tidak pakai initial game data
         var namaLevelPack = _soalSoal.name;
         int levelTerakhir = _playerProgress.progressData.progressLevel[namaLevelPack];
+
+
         
         if (_indexSoal + 2 > levelTerakhir)
         {

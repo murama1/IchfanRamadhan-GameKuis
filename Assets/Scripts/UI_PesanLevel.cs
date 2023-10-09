@@ -19,6 +19,13 @@ public class UI_PesanLevel : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _tempatPesan = null;
 
+    [SerializeField]
+    private Animator _animator = null;
+
+    [SerializeField]
+    private AudioClip[] _suaraSuara = new AudioClip[0];
+
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -41,12 +48,16 @@ public class UI_PesanLevel : MonoBehaviour
         {
             _opsiMenang.SetActive(true);
             _opsiKalah.SetActive(false);
+            _animator.SetBool("Win", true);
+            AudioManager.instance.PlaySFX(_suaraSuara[0]);
 
         }
         else
         {
             _opsiMenang.SetActive(false);
             _opsiKalah.SetActive(true);
+            _animator.SetBool("Win", false);
+            AudioManager.instance.PlaySFX(_suaraSuara[1]);
         }
     }
 

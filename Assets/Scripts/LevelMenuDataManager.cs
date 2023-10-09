@@ -24,6 +24,12 @@ public class LevelMenuDataManager : MonoBehaviour
     void Start()
     {
 
+        //play BGM
+        if (AudioManager.instance != null) { 
+            AudioManager.instance.PlayBGM(0); }
+        
+
+
         if (!_playerProgress.MuatProgress())
         {
             _playerProgress.SimpanProgress();

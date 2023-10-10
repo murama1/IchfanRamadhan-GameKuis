@@ -114,9 +114,33 @@ public class PlayerProgress : ScriptableObject
 
     public bool MuatProgress()
     {
-        //informasi untuk memuat data
+#if UNITY_EDITOR
         var directory = Application.dataPath + "/Temporary/";
-        var path = directory + _fileName;
+#elif (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR                                              
+        string directory = Application.persistentDataPath + "/ProgresLokal/";
+#endif
+        string path = directory + _fileName;
+
+        //coba buat di load directorynya
+        //membuat directory temporary
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+            Debug.Log("Directory has been Created: " + directory);
+        }
+
+        //membuat file baru
+        if (!File.Exists(path))
+        {
+            File.Create(path).Dispose();
+            Debug.Log("file created: " + path);
+
+        }
+
+        //informasi untuk memuat data
+        //komen untuk menyamakan di method SimpanProgress
+        //var directory = Application.dataPath + "/Temporary/";
+        //var path = directory + _fileName;
 
         //memuat data dari file menggunakan binary formatter
         var fileStream = File.Open(path, FileMode.OpenOrCreate);

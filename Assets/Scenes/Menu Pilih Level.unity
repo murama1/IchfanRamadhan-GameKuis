@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 403766242}
   - component: {fileID: 403766241}
   - component: {fileID: 403766240}
+  - component: {fileID: 403766243}
   m_Layer: 5
   m_Name: KembaliButton
   m_TagString: Untagged
@@ -301,6 +302,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 403766243}
+        m_TargetAssemblyTypeName: PemanggilSuara, Assembly-CSharp
+        m_MethodName: PanggilSuara
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: ed249e373679d4a11adc0b58a4477f45, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 730537855}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -351,6 +364,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403766238}
   m_CullTransparentMesh: 1
+--- !u!114 &403766243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403766238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0c13cada8ddc14c95f650e3646023f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &404417859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -800,7 +825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &730537856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -979,6 +1004,7 @@ GameObject:
   - component: {fileID: 960072838}
   - component: {fileID: 960072837}
   - component: {fileID: 960072836}
+  - component: {fileID: 960072839}
   m_Layer: 5
   m_Name: LanjutButton
   m_TagString: Untagged
@@ -1050,6 +1076,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 960072839}
+        m_TargetAssemblyTypeName: PemanggilSuara, Assembly-CSharp
+        m_MethodName: PanggilSuara
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: af2ca5569671a459b90f25803b7c7b63, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 730537860}
         m_TargetAssemblyTypeName: UI_MenuConfirmMessage, Assembly-CSharp
         m_MethodName: BukaLevel
@@ -1112,6 +1150,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960072834}
   m_CullTransparentMesh: 1
+--- !u!114 &960072839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960072834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0c13cada8ddc14c95f650e3646023f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &963353001 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8329476638333089387, guid: f70b3fc74cfa3bb4a84120ee2c55f63a, type: 3}
@@ -1290,6 +1340,7 @@ GameObject:
   - component: {fileID: 1053455959}
   - component: {fileID: 1053455958}
   - component: {fileID: 1053455957}
+  - component: {fileID: 1053455960}
   m_Layer: 5
   m_Name: KeMenuButton
   m_TagString: Untagged
@@ -1361,6 +1412,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1053455960}
+        m_TargetAssemblyTypeName: PemanggilSuara, Assembly-CSharp
+        m_MethodName: PanggilSuara
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: ed249e373679d4a11adc0b58a4477f45, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 730537855}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -1411,6 +1474,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053455955}
   m_CullTransparentMesh: 1
+--- !u!114 &1053455960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053455955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0c13cada8ddc14c95f650e3646023f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1227941984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,7 +2997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329476638333089387, guid: f70b3fc74cfa3bb4a84120ee2c55f63a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00083845935
+      value: -0.000060752845
       objectReference: {fileID: 0}
     - target: {fileID: 8559474926719863874, guid: f70b3fc74cfa3bb4a84120ee2c55f63a, type: 3}
       propertyPath: m_AnchorMax.x
